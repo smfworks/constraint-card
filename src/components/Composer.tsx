@@ -86,12 +86,11 @@ export function Composer({
         <p>Pick a sample, paste a rule dump, or list MUST / MUST NOT / STOP by hand.</p>
       </div>
 
-      <div className="sample-row" role="list">
+      <div className="sample-row">
         {SAMPLES.map((sample) => (
           <button
             key={sample.id}
             type="button"
-            role="listitem"
             className={sampleId === sample.id ? "chip is-on" : "chip"}
             onClick={() => onSample(sample.id)}
           >

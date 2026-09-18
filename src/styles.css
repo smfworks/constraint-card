@@ -291,6 +291,12 @@ textarea {
   font-size: 12px;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: #6b7388;
+  opacity: 1;
+}
+
 input:focus,
 textarea:focus,
 select:focus {

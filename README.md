@@ -20,6 +20,14 @@ SMF Works viral kit:
 
 Also in the kit: [Skill Card](https://github.com/smfworks/skill-card), [Prompt Diff](https://github.com/smfworks/prompt-diff), [Redact Before Share](https://github.com/smfworks/redact-before-share), [Context Budget](https://github.com/smfworks/context-budget), [Session Timeline](https://github.com/smfworks/session-timeline).
 
+## Screenshots
+
+Desktop split (builder left, constitution right). Mobile stacks the builder above the card.
+
+![Constraint Card desktop](docs/app-desktop.png)
+
+![Constraint Card mobile](docs/app-mobile.png)
+
 ## Why a constraint card?
 
 Agent work fails when the standing rules live in a chat scroll. A card is small enough to screenshot and specific enough to argue with — research-only vs PR comments vs inbox drafts vs support guardrails.
