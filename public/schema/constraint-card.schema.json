@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/smfworks/constraint-card/blob/main/public/schema/constraint-card.schema.json",
+  "title": "ConstraintCard",
+  "description": "Machine-readable agent constitution: standing MUST / MUST NOT / STOP rules. Other tools can emit this shape so Constraint Card can print a BOUND card. This is a communication artifact, not an enforcement runtime.",
+  "type": "object",
+  "required": ["title", "must", "mustNot", "stop"],
+  "additionalProperties": true,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "smf.constraint-card.v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^CC-[0-9A-F]{4}$",
+      "description": "Card serial printed on the stamp."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short name for the constitution."
+    },
+    "name": {
+      "type": "string",
+      "description": "Alias for title."
+    },
+    "agent": {
+      "type": "string",
+      "description": "Optional agent this constitution binds."
+    },
+    "issuedFor": {
+      "type": "string",
+      "description": "Alias for agent."
+    },
+    "scope": {
+      "type": "string",
+      "description": "Optional one-line bound on the work."
+    },
+    "session": {
+      "type": "string",
+      "description": "Optional session / window label (e.g. this session, this ticket)."
+    },
+    "expiry": {
+      "type": "string",
+      "description": "Alias for session."
+    },
+    "must": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Standing positive rules."
+    },
+    "mustDo": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for must."
+    },
+    "mustNot": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Standing prohibitions."
+    },
+    "must_not": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for mustNot."
+    },
+    "never": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for mustNot."
+    },
+    "stop": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Stop / abort conditions."
+    },
+    "stopIf": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for stop."
+    },
+    "stopConditions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for stop."
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "heuristic": {
+      "type": "boolean",
+      "const": true,
+      "description": "Always true — this is a demo printer, not a policy engine."
+    }
+  }
+}

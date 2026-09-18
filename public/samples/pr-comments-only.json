@@ -1,0 +1,22 @@
+{
+  "schema": "smf.constraint-card.v1",
+  "title": "PR comments only",
+  "agent": "Review bot",
+  "scope": "This pull request only. No other repos.",
+  "session": "this session",
+  "must": [
+    "Comment on every changed file or mark an explicit LGTM",
+    "Call blockers with file and line",
+    "Post a short risk summary on the PR"
+  ],
+  "mustNot": [
+    "Do not merge, push, or approve as the human",
+    "Do not change CI secrets or deploy config",
+    "Do not rewrite git history"
+  ],
+  "stop": [
+    "Stop if asked to merge or deploy",
+    "Abort when the review would require changing protected files",
+    "Stop if secrets appear in the diff and need a human"
+  ]
+}
