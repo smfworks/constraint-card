@@ -190,8 +190,8 @@ export default function App() {
     <div className="page">
       <div className="ambient" aria-hidden="true" />
       <Header />
-      <SisterStrip current="constraint-card" payload={paste || JSON.stringify(draft)} />
-      <HandoffBanner onPaste={(text) => { setPaste(text); setSampleId(null); }} />
+      <SisterStrip current="constraint-card" payload={paste || JSON.stringify(draft)} kind="json" />
+      <HandoffBanner accept={["json", "plain"]} onPaste={(text) => { setPaste(text); setSampleId(null); }} />
       <main className="layout">
         <Composer
           draft={draft}
